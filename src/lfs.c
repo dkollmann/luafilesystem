@@ -19,6 +19,7 @@
 
 #ifdef _WIN32
 #define _WIN32_WINNT 0x600
+#define _CRT_SECURE_NO_WARNINGS
 #endif
 
 #ifndef LFS_DO_NOT_USE_LARGE_FILE
@@ -281,7 +282,7 @@ static int get_dir(lua_State * L)
       break;
     }
     path = path2;
-    if (getcwd(path, size) != NULL) {
+    if (getcwd(path, (int)size) != NULL) {
       /* success, push the path to the Lua stack */
       lua_pushstring(L, path);
       result = 1;

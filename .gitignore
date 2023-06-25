@@ -1,2 +1,6 @@
 *.so
+*.user
 
+lua/
+msvc/.vs/
+msvc/x64/
